@@ -308,7 +308,7 @@ echo '<h6 class="pt-3"><b>用户须知：</b><h6>';
         if(stripos($_GET['link'],'youtu.be') !== false || stripos($_GET['link'],'youtube.com') !== false || stripos($_GET['link'],'watch?v=') !== false  ){}else{echo '<h6>非法请求</h6>';break;exit();}
         preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $_GET['link'], $mats);
         $viddata=get_video_info($mats[1],APIKEY);
-        echo '<h5>'.$viddata['items']['0']['snippet']['title'].'</h5>';
+        echo '<h5>'.$viddata['items']['0']['snippet']['title'].'-Haris Naeem</h5>';
         echo '<div class="text-center p-3"><img src="./thumbnail.php?type=0&vid='.$mats[1].'" class="rounded img-fluid"></div>';
         echo video_down($mats[1],$viddata['items']['0']['snippet']['title']);
      break;
